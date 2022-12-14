@@ -13,6 +13,9 @@
         default-directory "~/")
 
   (tool-bar-mode -1)
+  (global-display-line-numbers-mode)
+  ;(global-linum-mode 1)
+  ;(global-hl-line-mode +1)
   ;(menu-bar-mode -1)
 
   ;; better scrolling experience
@@ -46,6 +49,20 @@
   (global-set-key (kbd "C-x 2") #'ian/split-and-follow-horizontally)
   (global-set-key (kbd "C-x 3") #'ian/split-and-follow-vertically))
 
+(use-package files
+  :ensure nil
+  :config
+  (setq confirm-kill-processes nil
+        create-lockfiles nil
+        make-backup-files nil))
+
+(use-package all-the-icons)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
+
 
 ;; Evil Mode
 (use-package evil
@@ -76,17 +93,21 @@
 	  '(textobjects insert navigation additional shift todo heading))
     (add-hook 'org-mode-hook (lambda () (evil-org-mode))))
 
-  (use-package powerline-evil
-    :ensure t
-    :config
-    (powerline-evil-vim-color-theme)))
+ ;; (use-package powerline-evil
+ ;;   :ensure t
+ ;;   :config
+ ;;   (powerline-evil-vim-color-theme)))
+)
+(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/"))
+(load-theme 'vscode-dark-plus t) ; an orginal theme created by me.
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(powerline-evil evil-org evil-indent-textobject evil-surround evil-leader evil)))
+   '(rainbow-delimiters powerline-evil evil-org evil-indent-textobject evil-surround evil-leader evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
