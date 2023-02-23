@@ -1,4 +1,11 @@
-require("nvim-tree").setup({
+local ok, cfg = pcall(require, 'nvim-tree')
+
+if not ok then
+  vim.notify("Error starting nvim-tree", vim.log.levels.ERROR)
+  return
+end
+
+cfg.setup {
   disable_netrw = false,
   hijack_netrw = false,
   ignore_ft_on_setup = {},
@@ -20,6 +27,6 @@ require("nvim-tree").setup({
       list = {},
     },
   },
-})
+}
 
 map("n", "<leader>n", ":NvimTreeToggle<CR>")

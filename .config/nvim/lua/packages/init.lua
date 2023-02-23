@@ -47,6 +47,7 @@ require('packer').startup(function(use)
   use 'theHamsta/nvim-dap-virtual-text'
   use 'Tetralux/odin.vim'
 
+  use 'numToStr/Fterm.nvim'
 
 --  use {
 --    'nanozuki/tabby.nvim',
@@ -84,6 +85,7 @@ require('packer').startup(function(use)
     requires = "nvim-lua/plenary.nvim",
   }
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use 'klen/nvim-config-local'
 
 end)
 
@@ -105,3 +107,4 @@ require('packages.metals')
 require('packages.dap')
 require('packages.daptext')
 require('packages.dapui')
+require('packages.localconfig')

@@ -1,0 +1,7 @@
+require("pkg/treesitter")
+require("pkg/nvimtree")
+require("pkg/telescope")
+require("pkg/whichkey")
+require("pkg/mason")
+require("pkg/masonlsp")
+require("pkg/lspconfig")

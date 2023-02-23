@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 
 require('utils')
 require('settings')
-require('packages')
+require('packer_boot')
+require('pkgs')
 require('keymaps')
+
 vim.cmd("colorscheme nightfox")
