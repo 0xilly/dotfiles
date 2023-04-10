@@ -7,4 +7,4 @@ require('packer_boot')
 require('pkgs')
 require('keymaps')
 
-vim.cmd("colorscheme nightfox")
+--vim.cmd.colorscheme 'melange'
