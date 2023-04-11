@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
   }
-  
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -61,6 +61,10 @@ return require('packer').startup(function(use)
     'ray-x/go.nvim',
     'ray-x/guihua.lua', -- recommended if need floating window support
   }
+
+  use 'p00f/clangd_extensions.nvim'
+  use 'Mofiqul/vscode.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   if packer_bootstrap then
     require('packer').sync()
