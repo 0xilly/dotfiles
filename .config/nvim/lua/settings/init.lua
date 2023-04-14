@@ -4,7 +4,7 @@ local set = vim.opt
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 2
-set.softtabstop = 2
+--set.softtabstop = 2
 
 set.hlsearch = true
 set.incsearch = true

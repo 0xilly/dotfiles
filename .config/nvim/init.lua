@@ -1,5 +1,6 @@
 local g = vim.g
 vim.g.mapleader = " "
+vim.g.editorconfig = true
 
 require('utils')
 require('settings')

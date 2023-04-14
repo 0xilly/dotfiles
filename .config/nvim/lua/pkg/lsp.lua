@@ -8,7 +8,7 @@ if not ok_mason or not ok_mason_lsp then
   return
 end
 
-local lsp_list = {"lua_ls", "clangd", "jdtls", "rust_analyzer"}
+local lsp_list = {"lua_ls", "clangd", "rust_analyzer", "java-language-server"}
 
 mason.setup{}
 mason_lsp.setup{
@@ -28,7 +28,8 @@ require('mason-lspconfig').setup_handlers({
       capabilities = capabilities,
     })
   end,
-  -- So qucik rant because the author of this jdtls-nvim hates users the configureation of this has to be nooped 
-  ['jdtls'] = noop,
   ['clangd'] = noop,
+
 })
+  -- So qucik rant because the author of this jdtls-nvim is a broken plugin and the plugin author refues to fix it
+lspconfig['java-language-server'].setup{}
