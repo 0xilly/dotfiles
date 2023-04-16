@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
   use 'p00f/clangd_extensions.nvim'
   use 'Mofiqul/vscode.nvim'
   use "lukas-reineke/indent-blankline.nvim"
+  use 'HiPhish/nvim-ts-rainbow2'
 
   if packer_bootstrap then
     require('packer').sync()
