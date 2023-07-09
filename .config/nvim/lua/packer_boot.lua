@@ -66,6 +66,12 @@ return require('packer').startup(function(use)
   use 'Mofiqul/vscode.nvim'
   use "lukas-reineke/indent-blankline.nvim"
   use 'HiPhish/nvim-ts-rainbow2'
+  use 'numToStr/FTerm.nvim'
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  use "IndianBoy42/tree-sitter-just"
+
+  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+
 
   if packer_bootstrap then
     require('packer').sync()

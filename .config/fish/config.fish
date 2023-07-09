@@ -11,6 +11,7 @@ switch (uname)
   case Darwin
     set -x PATH /opt/homebrew/bin $PATH
     set -x PATH /opt/homebrew/opt/llvm/bin $PATH
+    set -x PATH /opt/homebrew/opt/bison@3.8/bin $PATH
     set -x PATH $HOME/Library/Application Support/Coursier/bin $PATH
     set -x PATH $HOME/.cargo/bin $PATH
     set -x PATH /usr/local/bin $PATH
@@ -19,7 +20,8 @@ switch (uname)
     set -x PATH $HOME/.local/bin $PATH
     set -x PATH $HOME/Library/Python/3.10/bin $PATH
 
-    set LLVM_BIN /opt/homebrew/Cellar/llvm/14.0.6_1/bin
+
+    set LLVM_BIN /opt/homebrew/Cellar/llvm/16.0.1/bin
     set -g -x CC $LLVM_BIN/clang
     set -g -x CXX $LLVM_BIN/clang++
 

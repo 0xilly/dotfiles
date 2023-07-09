@@ -22,6 +22,8 @@ keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
 
 keymap("n", "<leader>w", "<cmd>lua require('nvim-window').pick()<cr>", {noremap = true})
+keymap("n", "<leader>ot", '<CMD>lua require("FTerm").toggle()<CR>', {noremap = true})
+
 
 keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap = true })
 keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', { noremap = true })
@@ -106,5 +108,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 vim.cmd("source ~/.config/nvim/lua/keymaps/keymaps.vim")

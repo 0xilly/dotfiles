@@ -2,13 +2,19 @@ local ok_mason, mason = pcall(require, "mason")
 
 local ok_mason_lsp, mason_lsp = pcall(require, "mason-lspconfig")
 
+local ok_ufo, ufo = pcall(require, 'ufo')
 
 if not ok_mason or not ok_mason_lsp then
   vim.notify("Error starting mason", vim.log.levels.ERROR)
   return
 end
 
-local lsp_list = {"lua_ls", "clangd", "rust_analyzer", "java-language-server"}
+if not ok_ufo then
+  vim.notify("Error starting UFO", vim.log.levels.ERROR)
+  return
+end
+
+local lsp_list = {"lua_ls", "clangd", "rust_analyzer", 'jdtls'}
 
 mason.setup{}
 mason_lsp.setup{
@@ -21,6 +27,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local noop = function() end
 
+
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true
+}
 require('mason-lspconfig').setup_handlers({
   function(server)
     lspconfig[server].setup({
@@ -31,5 +42,5 @@ require('mason-lspconfig').setup_handlers({
   ['clangd'] = noop,
 
 })
-  -- So qucik rant because the author of this jdtls-nvim is a broken plugin and the plugin author refues to fix it
-lspconfig['java-language-server'].setup{}
+
+ufo.setup{}
