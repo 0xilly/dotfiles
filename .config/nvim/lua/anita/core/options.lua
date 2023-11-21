@@ -6,11 +6,11 @@ opt.number = true
 
 -- tabs & indentation
 opt.tabstop = 2 
-opt.shiftwidth = 2 
-opt.expandtab = false
-opt.autoindent = false
+-- opt.shiftwidth = 2 
+-- opt.expandtab = false
+opt.autoindent = true
 
-vim.g.editorconfig = false
+vim.g.editorconfig = true
 
 -- line wrapping
 opt.wrap = false 
