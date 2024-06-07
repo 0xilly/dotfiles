@@ -1,26 +1,26 @@
 local opt = vim.opt
 
 --line numbers
-opt.relativenumber = true 
-opt.number = true 
+opt.relativenumber = true
+opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 2 
--- opt.shiftwidth = 2 
+opt.tabstop = 2
+-- opt.shiftwidth = 2
 -- opt.expandtab = false
 opt.autoindent = true
 
 vim.g.editorconfig = true
 
 -- line wrapping
-opt.wrap = false 
+opt.wrap = false
 
 -- search settings
-opt.ignorecase = true 
-opt.smartcase = true 
+opt.ignorecase = true
+opt.smartcase = true
 
 -- cursor line
-opt.cursorline = true 
+opt.cursorline = true
 
 -- appearance
 
@@ -42,3 +42,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"

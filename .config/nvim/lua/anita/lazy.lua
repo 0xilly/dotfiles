@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "anita.pkgs" },
-	{ import = "anita.pkgs.lsp" },
+	-- { import = "anita.pkgs.lsp" },
+	-- { import = "anita.pkgs.nvimdev" },
 	},
 		{
 		install = {
