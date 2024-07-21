@@ -5,7 +5,8 @@ return {
 			"folke/neodev.nvim",
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig",
-			"WhoIsSethDaniel/mason-tool-installer.nvim"
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
 			require("neodev").setup{}
@@ -14,6 +15,8 @@ return {
 
 			if pcall(require, "cmp_nvim_lsp") then
 				capabilities = require("cmp_nvim_lsp").default_capabilities()
+			else
+				print("Error")
 			end
 
 			local lspconfig = require "lspconfig"
@@ -27,6 +30,7 @@ return {
 				tsserver = true,
 				jsonls = true,
 				jdtls = true,
+				ols = true,
 			}
 
 			local servers_to_install = vim.tbl_filter(function(key)
@@ -43,6 +47,7 @@ return {
 			local ensure_installed = {
 				"lua_ls",
 				"delve",
+				"clangd"
 			}
 
 			vim.list_extend(ensure_installed, servers_to_install)

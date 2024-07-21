@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 alias v="nvim"
+alias vv="neovide"
 alias vim="nvim"
 
 alias dot="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
@@ -26,7 +27,12 @@ switch (uname)
     set -g -x CXX $LLVM_BIN/clang++
 
     set -x PATH $HOME/Devel/dartshit/fluttersdk/flutter/bin $PATH
+
   case Linux
+		set -x PATH $HOME/go/bin $PATH
+    set -x PATH $HOME/.cargo/bin $PATH
+		set -x PATH $HOME/.local/bin/flutter/bin $PATH
+		set -x PATH $HOME/.local/bin/bin $PATH
   case '*'
 
 end
