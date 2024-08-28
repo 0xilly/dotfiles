@@ -16,7 +16,7 @@ require("lazy").setup({
 	},
 		{
 		install = {
-		  colorscheme = { 'tokyonight' },
+--		  colorscheme = { 'tokyonight' },
 		},
 		checker = {
 		  enabled = true,
@@ -25,8 +25,5 @@ require("lazy").setup({
 		change_detection = {
 		  notify = false,
 		},
-		dev = {
-			path = "~/Devel/nvimshit/",
-			patterns = {"0xilly"},
-		}
+
   })

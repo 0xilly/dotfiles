@@ -46,4 +46,10 @@ opt.swapfile = false
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 
-
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    vim.cmd('GoFmt')
+  end,
+  group = format_sync_grp,
+})
