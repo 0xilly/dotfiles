@@ -31,6 +31,7 @@ return {
 				jsonls = true,
 				jdtls = true,
 				ols = true,
+				zls = true,
 			}
 
 			local servers_to_install = vim.tbl_filter(function(key)
@@ -47,7 +48,8 @@ return {
 			local ensure_installed = {
 				"lua_ls",
 				"delve",
-				"clangd"
+				"clangd",
+				--"zls",
 			}
 
 			vim.list_extend(ensure_installed, servers_to_install)
